@@ -3,15 +3,15 @@
 import React from "react";
 import { sound } from "@/lib/sound";
 import { PERSONAL_INFO } from "@/lib/data";
-import { 
-  ArrowUpRight, 
-  Terminal, 
-  Bot, 
-  Cpu, 
-  Sparkles, 
-  Layers, 
-  Github, 
-  Linkedin, 
+import {
+  ArrowUpRight,
+  Terminal,
+  Bot,
+  Cpu,
+  Sparkles,
+  Layers,
+  Github,
+  Linkedin,
   Mail,
   Award,
   Crown
@@ -35,7 +35,7 @@ export const Hero: React.FC<HeroProps> = ({
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-          
+
           {/* Status Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel text-xs font-medium text-zinc-300 mb-8 border border-white/[0.08] shadow-inner">
             <span className="flex h-2 w-2 relative">
