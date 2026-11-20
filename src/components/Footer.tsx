@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { sound } from "@/lib/sound";
 import { PERSONAL_INFO } from "@/lib/data";
-import { Github, Linkedin, Mail, Heart, ArrowUp, Terminal, Shield } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, ArrowUp } from "lucide-react";
 
 export const Footer: React.FC = () => {
   const [istTime, setIstTime] = useState<string>("");
@@ -41,11 +41,11 @@ export const Footer: React.FC = () => {
             <div className="flex items-center gap-2">
               <span className="font-bold text-white text-sm">Niyas Jahangeer</span>
               <span className="text-[10px] font-mono bg-white/[0.05] px-2 py-0.5 rounded text-zinc-400">
-                ECE · AI Engineer · Builder
+                President @ IRIS · SecGen @ COGNEX.AI · Founder @ SIRAQ
               </span>
             </div>
             <p className="text-zinc-500 text-xs">
-              Bridging physical electronics with cloud software and agentic intelligence.
+              KVG College of Engineering (KVGCE), Sullia, Karnataka · Bengaluru, India
             </p>
           </div>
 
@@ -53,11 +53,11 @@ export const Footer: React.FC = () => {
           <div className="flex items-center gap-6 text-zinc-400 font-mono text-[11px]">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>SYSTEMS NOMINAL</span>
+              <span>KVGCE NODE ONLINE</span>
             </div>
             <div>
-              <span>KERALA (IST): </span>
-              <span className="text-white font-bold">{istTime || "12:00:00 PM"}</span>
+              <span>IST (UTC+5:30): </span>
+              <span className="text-white font-bold">{istTime || "10:30:00 PM"}</span>
             </div>
           </div>
 
@@ -69,6 +69,7 @@ export const Footer: React.FC = () => {
               rel="noreferrer"
               onClick={() => sound.playClick()}
               className="p-2 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] text-zinc-400 hover:text-white transition-colors"
+              title="GitHub (28+ Repos)"
             >
               <Github className="w-4 h-4" />
             </a>
@@ -78,13 +79,15 @@ export const Footer: React.FC = () => {
               rel="noreferrer"
               onClick={() => sound.playClick()}
               className="p-2 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] text-zinc-400 hover:text-white transition-colors"
+              title="LinkedIn"
             >
               <Linkedin className="w-4 h-4" />
             </a>
             <a
-              href={`mailto:${PERSONAL_INFO.socials.email}`}
+              href={`mailto:${PERSONAL_INFO.email}`}
               onClick={() => sound.playClick()}
               className="p-2 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] text-zinc-400 hover:text-white transition-colors"
+              title="Email"
             >
               <Mail className="w-4 h-4" />
             </a>
@@ -101,16 +104,17 @@ export const Footer: React.FC = () => {
 
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-zinc-500 text-[11px]">
           <div>
-            © {new Date().getFullYear()} Niyas Jahangeer. All rights reserved.
+            © {new Date().getFullYear()} Niyas Jahangeer · Phone: {PERSONAL_INFO.phone} · {PERSONAL_INFO.email}
           </div>
           <div className="flex items-center gap-4">
-            <span>Built with Next.js 14 & Tailwind CSS</span>
+            <span>28+ Repositories</span>
             <span>·</span>
-            <span>Zero Unnecessary Dependencies</span>
+            <span>100+ Deliverables</span>
+            <span>·</span>
+            <span>Rank 9 HackWise</span>
           </div>
         </div>
       </div>
     </footer>
   );
 };
-

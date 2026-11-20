@@ -2,14 +2,16 @@
 
 import React from "react";
 import { sound } from "@/lib/sound";
-import { TIMELINE } from "@/lib/data";
+import { TIMELINE, HACKATHONS } from "@/lib/data";
 import { 
   GraduationCap, 
   Briefcase, 
   Cpu, 
   Calendar, 
   MapPin, 
-  CheckCircle2 
+  CheckCircle2,
+  Trophy,
+  Award
 } from "lucide-react";
 
 export const ExperienceTimeline: React.FC = () => {
@@ -17,10 +19,10 @@ export const ExperienceTimeline: React.FC = () => {
     switch (type) {
       case "Education":
         return <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">Education</span>;
-      case "Experience":
+      case "Leadership":
         return <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">Leadership</span>;
-      case "Project":
-        return <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Project Lead</span>;
+      case "Entrepreneurship":
+        return <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-amber-500/20 text-amber-300 border border-amber-500/30">Founder & CEO</span>;
       default:
         return null;
     }
@@ -34,19 +36,19 @@ export const ExperienceTimeline: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 mb-3">
             <Briefcase className="w-3.5 h-3.5" />
-            <span>Academic & Professional Journey</span>
+            <span>Leadership & Track Record</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Milestones & Leadership
+            Roles, Community & Education
           </h2>
           <p className="text-sm sm:text-base text-zinc-400 mt-2">
-            Chronology of academic research in Electronics & Communication, founding SIRAQ Technologies, and shipping innovative engineering systems.
+            Serving as President of IRIS Community, Secretary General of COGNEX.AI, Founder of SIRAQ Studio, and ECE undergraduate at KVGCE.
           </p>
         </div>
 
         {/* Timeline Items */}
-        <div className="relative border-l border-white/[0.1] ml-4 sm:ml-32 space-y-12">
-          {TIMELINE.map((item, idx) => (
+        <div className="relative border-l border-white/[0.1] ml-4 sm:ml-32 space-y-12 mb-20">
+          {TIMELINE.map((item) => (
             <div key={item.id} className="relative pl-8 sm:pl-10 group">
               
               {/* Bullet Node */}
@@ -115,8 +117,35 @@ export const ExperienceTimeline: React.FC = () => {
           ))}
         </div>
 
+        {/* Hackathons & Competitions Grid */}
+        <div className="mt-16">
+          <div className="flex items-center gap-2 mb-6">
+            <Trophy className="w-5 h-5 text-amber-400" />
+            <h3 className="text-xl font-bold text-white">National Hackathons & Competitions</h3>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-4">
+            {HACKATHONS.map((hack, idx) => (
+              <div key={idx} className="glass-panel p-5 rounded-2xl border border-white/[0.08] flex flex-col justify-between">
+                <div>
+                  {hack.rank && (
+                    <span className="inline-block px-2.5 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 mb-3">
+                      {hack.rank}
+                    </span>
+                  )}
+                  <h4 className="text-sm font-bold text-white mb-1">{hack.name}</h4>
+                  <div className="text-xs text-zinc-400 mb-3">{hack.organizer}</div>
+                  <p className="text-xs text-zinc-400 leading-relaxed mb-4">{hack.description}</p>
+                </div>
+                <div className="pt-3 border-t border-white/[0.05] text-[11px] font-mono text-cyan-300">
+                  {hack.highlight}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );
 };
-

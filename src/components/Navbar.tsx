@@ -114,7 +114,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 Niyas Jahangeer
               </span>
               <span className="text-[10px] font-mono text-zinc-400">
-                ECE · Full-Stack · AI
+                ECE @ KVGCE · AI & Founder
               </span>
             </div>
           </a>

@@ -1,9 +1,8 @@
 import { NextResponse } from "next/server";
-import { PERSONAL_INFO, PROJECTS, SKILL_CATEGORIES, TIMELINE } from "@/lib/data";
+import { PERSONAL_INFO, PROJECTS, SKILL_CATEGORIES, TIMELINE, HACKATHONS } from "@/lib/data";
 
 interface ChatRequest {
   message: string;
-  history?: { role: "user" | "assistant"; content: string }[];
 }
 
 export async function POST(request: Request) {
@@ -15,41 +14,38 @@ export async function POST(request: Request) {
     }
 
     const query = message.toLowerCase().trim();
-
-    // Built-in intelligent context engine for Niyas Jahangeer
     let answer = "";
 
-    if (query.includes("agrimithra") || query.includes("farm") || query.includes("agriculture")) {
-      const p = PROJECTS.find((x) => x.id === "agrimithra");
-      answer = `**AgriMithra** is Niyas's flagship IoT precision agriculture project. It connects ESP32/LoRa field sensor nodes (monitoring soil NPK, moisture, and microclimate) to a Next.js telemetry dashboard and FastAPI cloud service. It achieved a 38% reduction in water consumption with automated solenoid valve actuation over a 5km wireless range.`;
-    } else if (query.includes("hospital") || query.includes("clinical") || query.includes("medical") || query.includes("smart hospital")) {
-      answer = `The **Smart Hospital Automation System** was engineered by Niyas to streamline healthcare operations. It combines non-invasive patient biometric monitors (FreeRTOS on ESP32), RFID staff/asset tracking, and real-time triage dashboards with WebSockets, slashing critical alert response times by 45%.`;
-    } else if (query.includes("siraq") || query.includes("saas") || query.includes("startup") || query.includes("company")) {
-      answer = `**SIRAQ Technologies** is founded by Niyas Jahangeer. It delivers high-performance SaaS engines and automation architectures built with Next.js 14, Supabase (with Row-Level Security), and FastAPI, achieving sub-second page loads and 99.9% uptime for business clients.`;
-    } else if (query.includes("ai") || query.includes("agent") || query.includes("llm") || query.includes("langgraph") || query.includes("gemini")) {
-      answer = `Niyas is an advanced AI engineer with hands-on experience developing **autonomous multi-agent workflows** using LangGraph, Google Gemini API, and local models via Ollama (Qwen 2.5, DeepSeek). He architects deterministic graph workflows with hybrid routing (fast local LLMs for parsing + frontier models for reasoning), tool execution sandboxes, and vector RAG memory.`;
-    } else if (query.includes("ece") || query.includes("electronics") || query.includes("hardware") || query.includes("iot") || query.includes("degree")) {
-      answer = `Niyas is an **Electronics & Communication Engineering (ECE)** student. His technical background includes microcontrollers (ESP32, STM32, ARM Cortex, Arduino), wireless protocols (LoRaWAN, BLE, Zigbee, MQTT), circuit design & PCB layout, and low-level C/C++ firmware. This hardware depth allows him to bridge the physical world with cloud systems seamlessly.`;
-    } else if (query.includes("skills") || query.includes("tech stack") || query.includes("languages") || query.includes("stack")) {
-      answer = `Niyas's core technical stack spans three primary layers:
-1. **Hardware & ECE**: Embedded C/C++, ESP32, STM32, ARM Cortex, LoRaWAN, MQTT, PCB Design.
-2. **Full-Stack & Cloud**: Next.js 14, React, TypeScript, Tailwind CSS, Python (FastAPI/Flask), Node.js, Supabase, Firebase, MongoDB.
-3. **AI & Agents**: Gemini API, LangGraph, Ollama, Qwen, Vector DBs, Multi-Agent Swarms.`;
-    } else if (query.includes("contact") || query.includes("hire") || query.includes("email") || query.includes("reach") || query.includes("freelance")) {
-      answer = `You can get in touch with Niyas directly via:
-- **Email**: ${PERSONAL_INFO.socials.email}
-- **LinkedIn**: [linkedin.com/in/niyasjahangeer](${PERSONAL_INFO.socials.linkedin})
-- **GitHub**: [github.com/niyasjahangeer](${PERSONAL_INFO.socials.github})
-- Or simply use the interactive **Contact Form** at the bottom of this portfolio!`;
-    } else if (query.includes("who are you") || query.includes("about") || query.includes("niyas") || query.includes("bio")) {
-      answer = `I am the AI assistant for **Niyas Jahangeer** — an Electronics & Communication Engineering student, full-stack engineer, AI agent developer, and entrepreneur based in Kerala, India. Niyas specializes in uniting hardware electronics, embedded IoT, cloud microservices, and autonomous AI systems. How can I assist you with his projects or qualifications today?`;
+    if (query.includes("mediscan") || query.includes("healthtech") || query.includes("medical") || query.includes("hospital")) {
+      answer = `**MediScan-AI** is Niyas's flagship healthcare platform. Engineered using Python, TensorFlow, and Flask, it analyzes medical scans and medicine prescriptions. Niyas extended it into an interconnected **6+ repository ecosystem** including Medi-tech, Meditab-AI, Medi-Chat-AI, and Medi-Appointment.`;
+    } else if (query.includes("iris") || query.includes("president") || query.includes("community")) {
+      answer = `Niyas is the **President of IRIS Community** at KVG College of Engineering (promoted from Technical Coordinator in Oct 2026). He leads IoT, robotics, and intelligent software workshops, including organizing a hands-on PCB workshop for 69 students.`;
+    } else if (query.includes("cognex") || query.includes("secretary")) {
+      answer = `Niyas serves as the **Secretary General of COGNEX.AI** at KVGCE. He advanced from Member to Joint Secretary and now Secretary General, leading strategic planning, AI events, and technical initiatives.`;
+    } else if (query.includes("siraq") || query.includes("studio") || query.includes("business") || query.includes("founder")) {
+      answer = `Niyas is the **Founder & CEO of SIRAQ Studio**, an independent design and print services enterprise. He has delivered **100+ creative deliverables** including digital branding, ID cards, certificates, posters, and automated documentation.`;
+    } else if (query.includes("hackathon") || query.includes("hackwise") || query.includes("achievement") || query.includes("rank")) {
+      answer = `Niyas has proven competitive achievements:
+1. **HackWise 3LC Data-Centric AI Challenge (Sphere Hive)**: Secured **Rank 9** nationally with an evaluation score of **0.895**.
+2. **Krishimanthan 36-Hour National Hackathon** (MCE Hassan): Rapid problem-solving & agriculture telemetry prototyping.
+3. **PCB Cupid Hardware Hackathon 3.0** (DSATM Bengaluru): National PCB design & hardware hackathon.`;
+    } else if (query.includes("college") || query.includes("education") || query.includes("degree") || query.includes("kvgce")) {
+      answer = `Niyas is pursuing his **B.E. in Electronics & Communication Engineering (ECE)** at **KVG College of Engineering (KVGCE)**, Sullia, Karnataka (Oct 2024 – 2028 expected, currently in 5th Semester).`;
+    } else if (query.includes("skills") || query.includes("tech stack") || query.includes("languages")) {
+      answer = `Niyas's core competencies:
+- **AI & ML**: TensorFlow, AI product prototyping, Data-Centric AI, LangGraph, Ollama.
+- **Software**: Python, Flask, JavaScript, TypeScript, Next.js, HTML/CSS, Streamlit, REST APIs.
+- **Hardware & ECE**: Arduino, ESP32, IoT, Robotics, Sensors, PCB Development.
+- **Enterprise & Creative**: SAP Certified, Microsoft Excel Certified, Canva (100+ deliverables).
+- **Languages**: Speaks 5 languages (English, Malayalam, Hindi, Kannada, Tamil).`;
+    } else if (query.includes("contact") || query.includes("email") || query.includes("phone")) {
+      answer = `You can reach Niyas directly at:
+- **Email**: ${PERSONAL_INFO.email}
+- **Phone**: ${PERSONAL_INFO.phone}
+- **GitHub**: [github.com/Niyas-J](${PERSONAL_INFO.socials.github}) (28+ repositories)
+- **LinkedIn**: [linkedin.com/in/niyas-j](${PERSONAL_INFO.socials.linkedin})`;
     } else {
-      answer = `Thank you for asking! Niyas Jahangeer is an Electronics & Communication Engineering student, full-stack engineer, and AI developer. He specializes in:
-- **IoT & Embedded Systems** (AgriMithra precision farm, Smart Hospital automation)
-- **Full-Stack SaaS Platforms** (Next.js 14, TypeScript, FastAPI, Supabase)
-- **Autonomous Multi-Agent AI** (LangGraph, Gemini API, local Ollama models)
-
-Feel free to ask about his specific projects, tech stack, ECE background, or how to contact him for collaborations!`;
+      answer = `Niyas Jahangeer is an ECE undergraduate at KVGCE, AI & software developer, President of IRIS Community, Secretary General of COGNEX.AI, and Founder of SIRAQ Studio. He maintains 28+ GitHub repos and has delivered 100+ creative and technical products. Ask me about his projects (MediScan-AI, AGENTX, AgriMithra), hackathon wins, or leadership roles!`;
     }
 
     return NextResponse.json({
@@ -60,8 +56,7 @@ Feel free to ask about his specific projects, tech stack, ECE background, or how
   } catch (error) {
     console.error("Chat API error:", error);
     return NextResponse.json({
-      reply: "I am having trouble processing your query right now. Please try again or reach out directly to Niyas via the contact form."
+      reply: "Encountered an issue processing query. Please contact Niyas directly at niyasjahangeer772@gmail.com."
     }, { status: 500 });
   }
 }
-

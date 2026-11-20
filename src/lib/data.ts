@@ -3,7 +3,7 @@ export interface Project {
   title: string;
   shortDesc: string;
   description: string;
-  category: "IoT & Robotics" | "Full-Stack SaaS" | "AI & Agents" | "Embedded Systems";
+  category: "AI & Healthtech" | "IoT & Hardware" | "Enterprise AI" | "Web & Automation";
   badge: string;
   tags: string[];
   features: string[];
@@ -20,7 +20,7 @@ export interface SkillCategory {
   description: string;
   skills: {
     name: string;
-    level: number; // 1-100
+    level: number;
     category: string;
     experience: string;
     highlight?: boolean;
@@ -33,337 +33,334 @@ export interface TimelineItem {
   role: string;
   organization: string;
   location: string;
-  type: "Education" | "Experience" | "Project" | "Achievement";
+  type: "Leadership" | "Education" | "Entrepreneurship" | "Hackathon";
   description: string;
   achievements: string[];
   tags: string[];
 }
 
+export interface HackathonItem {
+  name: string;
+  organizer: string;
+  rank?: string;
+  description: string;
+  highlight: string;
+}
+
 export const PERSONAL_INFO = {
   name: "Niyas Jahangeer",
-  title: "Electronics & Communication Engineer & Full-Stack AI Developer",
-  subheading: "Bridging Silicon, Cloud & Autonomous Intelligence",
-  status: "Available for High-Impact Roles & Innovative Collaborations",
-  location: "Kerala, India",
-  timezone: "Asia/Kolkata (IST, UTC+5:30)",
-  bio: "Electronics and Communication Engineering student, full-stack engineer, and technology entrepreneur. I engineer end-to-end solutions that span from microcontrollers and IoT telemetry to high-throughput cloud architectures, modern React/Next.js interfaces, and autonomous AI multi-agent workflows.",
-  about: [
-    "As an Electronics & Communication Engineering student, I bring a unique hardware-aware perspective to software engineering. Having designed circuit boards, configured LoRaWAN telemetry, and written embedded firmware, I approach cloud computing, systems architecture, and distributed systems with a deep understanding of physics, timing, and resource constraints.",
-    "On the software and AI frontier, I build scalable full-stack applications with Next.js, TypeScript, Tailwind CSS, FastAPI, and Node.js, alongside cutting-edge autonomous AI multi-agent architectures using LangGraph, Gemini API, and local LLMs (Ollama, Qwen).",
-    "Driven by entrepreneurial ambition, I turn research prototypes into real-world platforms like AgriMithra (precision agriculture IoT) and Smart Hospital Automation, delivering verifiable reliability and exceptional user experiences."
-  ],
+  roleTitle: "ECE Undergraduate | AI & Software Developer | Technical Leader | Entrepreneur | Product Builder",
+  subheading: "President @ IRIS Community · Secretary General @ COGNEX.AI · Founder @ SIRAQ Studio",
+  status: "President @ IRIS Community & Secretary General @ COGNEX.AI",
+  location: "Bengaluru & Sullia, Karnataka, India",
+  phone: "+91 82174 69646",
+  email: "niyasjahangeer772@gmail.com",
+  college: "KVG College of Engineering (KVGCE), Sullia, Karnataka",
+  degree: "B.E. in Electronics & Communication Engineering (Oct 2024 – 2028 Expected, 5th Semester)",
+  bio: "Electronics & Communication Engineering undergraduate, AI and software developer, and founder who ships real products: AI-powered healthtech platforms, Flask web applications, and IoT & robotics hardware. President of IRIS Community and Secretary General of COGNEX.AI at KVGCE, Founder & CEO of SIRAQ Studio, maintaining 28+ GitHub repositories with 100+ creative deliverables.",
+  languages: ["English", "Malayalam", "Hindi", "Kannada", "Tamil"],
   stats: [
-    { label: "Engineering Disciplines", value: "Hardware + Cloud + AI" },
-    { label: "Core Projects Shipped", value: "15+" },
-    { label: "Sensor & IoT Nodes Deployed", value: "50+" },
-    { label: "Modern Tech Stacks", value: "TypeScript · Python · C++" },
+    { label: "GitHub Repositories", value: "28+" },
+    { label: "HackWise AI Challenge", value: "Rank 9 (0.895)" },
+    { label: "Creative Deliverables", value: "100+" },
+    { label: "Students in Workshops", value: "69+ Mentored" },
   ],
   socials: {
-    github: "https://github.com/niyasjahangeer",
-    linkedin: "https://linkedin.com/in/niyasjahangeer",
-    email: "niyasjahangeer@gmail.com",
-    twitter: "https://x.com/niyasjahangeer",
-    portfolio: "https://niyasjahangeer.dev",
+    github: "https://github.com/Niyas-J",
+    linkedin: "https://linkedin.com/in/niyas-j",
+    email: "niyasjahangeer772@gmail.com",
+    portfolio: "https://github.com/Niyas-J/PROTFOLIO",
   },
 };
 
 export const PROJECTS: Project[] = [
   {
-    id: "agrimithra",
-    title: "AgriMithra: Precision Smart Farm Management System",
-    shortDesc: "End-to-end IoT and cloud telemetry platform empowering sustainable agriculture through real-time soil analysis and autonomous irrigation.",
-    description: "AgriMithra bridges cutting-edge agronomy with embedded IoT hardware and cloud software. Using custom ESP32/LoRa field nodes equipped with soil NPK, volumetric water content, temperature, and atmospheric sensors, it streams telemetry to an edge gateway and Next.js cloud portal. Machine learning models analyze microclimatic trends to actuate high-precision drip irrigation valves autonomously.",
-    category: "IoT & Robotics",
-    badge: "Flagship IoT Project",
-    tags: ["IoT Telemetry", "ESP32 / LoRaWAN", "Next.js 14", "Python / FastAPI", "MQTT", "TimeScaleDB", "Tailwind CSS"],
+    id: "mediscan-ai",
+    title: "MediScan-AI: 6+ Repository Healthtech Ecosystem",
+    shortDesc: "End-to-end AI-powered healthtech ecosystem for medical scan-report analysis, medicine verification, and automated clinical appointments.",
+    description: "An AI-powered clinical intelligence platform engineered with Python, TensorFlow, and Flask. MediScan-AI processes medical imaging and medicine data, integrating an AI inference pipeline with interactive web interfaces. Extended into a 6+ repository open-source healthcare ecosystem comprising Medi-tech, Meditab-AI, Medi-Chat-AI, and Medi-Appointment.",
+    category: "AI & Healthtech",
+    badge: "Flagship Healthtech Platform",
+    tags: ["Python", "TensorFlow", "Flask", "Computer Vision", "Healthtech", "REST API", "JavaScript"],
     features: [
-      "Real-time sensor telemetry streaming over MQTT and WebSockets",
-      "Sub-gigahertz LoRa long-range wireless mesh covering up to 5km rural farm radius",
-      "Automated solenoid valve actuation triggered by soil moisture thresholds",
-      "Crop disease risk prediction based on humidity-temperature index",
-      "Offline-first mobile-responsive dashboard for low-bandwidth rural operations"
+      "Medical scan-report classification and medicine prescription verification",
+      "6+ repository interconnected ecosystem (Medi-tech, Meditab-AI, Medi-Chat-AI, Medi-Appointment)",
+      "Alternative-medicine lookup, nearby clinic locator, and real-time AI triage chat",
+      "Structured medicine data extraction using custom machine learning inference",
+      "High-speed responsive web client with photo and PDF report uploads"
     ],
-    architecture: "Edge Sensor Nodes (ESP32 + LoRa) -> Central Field Gateway -> MQTT Broker (EMQX) -> FastAPI Backend Service -> TimeScaleDB -> Next.js Real-time Analytics Dashboard.",
+    architecture: "HTML5/CSS Client -> Flask REST API Backend -> TensorFlow Inference Engine -> Medicine Database -> Multi-Repo Micro-services (Medi-tech, Meditab, Medi-Chat).",
     metrics: [
-      { label: "Water Conservation", value: "38% Saved" },
-      { label: "Telemetry Latency", value: "< 250ms" },
-      { label: "Battery Field Life", value: "18 Months" },
-      { label: "Field Range", value: "5 km LoRa" }
+      { label: "Ecosystem Size", value: "6+ Repos" },
+      { label: "Inference Stack", value: "TensorFlow" },
+      { label: "Deployment", value: "Flask + Cloud" },
+      { label: "Target Domain", value: "Clinical AI" }
     ],
     featured: true,
-    githubUrl: "https://github.com/niyasjahangeer/agrimithra-smart-farm",
-    liveUrl: "https://agrimithra.vercel.app",
+    githubUrl: "https://github.com/Niyas-J/MediScan-AI",
   },
   {
-    id: "smart-hospital",
-    title: "Smart Hospital Automation & Patient Care System",
-    shortDesc: "Integrated clinical automation platform combining IoT vital monitoring, RFID asset tracking, and emergency alert triage.",
-    description: "Developed to alleviate clinical bottlenecks and modernize hospital operations. Incorporates non-invasive patient telemetry monitors (SpO2, ECG heart rate, ambient vitals), RFID medical staff/asset tracking, and automated nurse call dispatch with audio-visual alerts and electronic medical record (EMR) synchronization.",
-    category: "IoT & Robotics",
-    badge: "Healthcare Innovation",
-    tags: ["Embedded C++", "ESP32 / FreeRTOS", "React", "Node.js", "Firebase", "WebSockets", "RFID"],
+    id: "agentx",
+    title: "AGENTX: Enterprise AI Agent Intelligence Platform",
+    shortDesc: "Stateful enterprise AI multi-agent orchestration engine built for deterministic problem solving and high-reliability task automation.",
+    description: "An enterprise AI agent intelligence and reliability platform. Leverages LangGraph DAGs, Ollama local model hosting, and frontier LLMs for multi-agent collaboration, verification checkpoints, and dynamic planning.",
+    category: "Enterprise AI",
+    badge: "Autonomous AI Platform",
+    tags: ["LangGraph", "Ollama", "Python", "Multi-Agent Swarms", "Vector DB", "FastAPI"],
     features: [
-      "Continuous bedside biometric data streaming with instant critical alarm thresholds",
-      "RFID badge tracking for surgical tools, medical carts, and ICU personnel",
-      "Automated triage prioritization queue minimizing response delay for cardiac alerts",
-      "Secure role-based dashboard for doctors, nurses, and administrative supervisors",
-      "Encrypted cloud synchronization conforming to patient data privacy principles"
+      "Stateful hierarchical multi-agent teams (Planner, Coder, Critic, Verifier)",
+      "Hybrid inference routing: low-latency local LLMs + cloud frontier models",
+      "Deterministic graph memory with checkpoint recovery",
+      "Dynamic tool calling with sandboxed execution environments"
     ],
-    architecture: "Bedside Monitor Units (FreeRTOS) -> Local Hospital Broker -> Node.js Microservices -> Firebase Realtime DB -> Hospital Station Dashboard & Mobile Alert System.",
+    architecture: "Client UI -> FastAPI Streaming Gateway -> LangGraph State Machine -> Local Ollama / Frontier Adapters -> Sandboxed Verification Runner.",
     metrics: [
-      { label: "Emergency Response", value: "45% Faster" },
-      { label: "Asset Loss Reduction", value: "92%" },
-      { label: "System Uptime", value: "99.98%" },
+      { label: "Architecture", value: "LangGraph DAG" },
+      { label: "Local Models", value: "Ollama / Qwen" },
+      { label: "Reliability", value: "Enterprise Grade" }
     ],
     featured: true,
-    githubUrl: "https://github.com/niyasjahangeer/smart-hospital-automation",
-    liveUrl: "https://smart-hospital.vercel.app",
+    githubUrl: "https://github.com/Niyas-J",
   },
   {
-    id: "siraq-platform",
-    title: "SIRAQ: High-Performance Enterprise SaaS Engine",
-    shortDesc: "Scalable modern SaaS architecture featuring high-speed API layers, multi-tenant RBAC, and intelligent workflow automation.",
-    description: "SIRAQ represents an enterprise-grade digital operating platform designed for rapid deployment. Built on Next.js 14, Supabase, and FastAPI, it includes unified authentication, team workspaces, customizable analytics dashboards, audit trails, and automated email/webhook notifications.",
-    category: "Full-Stack SaaS",
-    badge: "Enterprise SaaS",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "FastAPI", "Stripe API", "PostgreSQL"],
+    id: "iris-agrishield",
+    title: "IRIS AgriShield & AgriMithra: IoT Agriculture",
+    shortDesc: "IoT-based precision agricultural monitoring, microclimate analysis, and automated irrigation control for sustainable farming.",
+    description: "Developed under IRIS Community and showcased at the Krishimanthan National Hackathon. Combines ESP32 and Arduino microcontroller hardware with multi-parameter soil moisture, NPK, and atmospheric sensors. Features automated irrigation valve actuation and cloud telemetry.",
+    category: "IoT & Hardware",
+    badge: "Hardware & IoT Innovation",
+    tags: ["ESP32", "Arduino", "IoT Sensors", "Embedded C++", "Flask", "Robotics", "Automation"],
     features: [
-      "Enterprise Multi-tenant architecture with Row-Level Security (RLS)",
-      "Dynamic dashboard builder with drag-and-drop metrics widgets",
-      "Integrated billing system with Stripe webhook verification",
-      "Fine-grained role-based access control (RBAC) and team invitation engine",
-      "REST & GraphQL external API endpoints with rate limiting and OpenAPI docs"
+      "Real-time sensor telemetry streaming: soil moisture, ambient temperature, humidity",
+      "Automated solenoid irrigation relay triggered by soil moisture thresholds",
+      "Wireless telemetry node integration for field deployment",
+      "Low-power sleep scheduling for extended field battery life",
+      "Demonstrated at Krishimanthan 36-Hour National Hackathon"
     ],
-    architecture: "Next.js App Router Frontend -> Edge Middleware Authentication -> Supabase / PostgreSQL Database with RLS -> FastAPI Background Workers -> Redis Cache.",
+    architecture: "Sensor Node (ESP32 + Soil/SHT31) -> Relay Actuator -> Edge Broker -> Flask Telemetry Service -> Responsive Live Dashboard.",
     metrics: [
-      { label: "Page Load Speed", value: "0.8s" },
-      { label: "Lighthouse Score", value: "98/100" },
-      { label: "API Response Time", value: "< 45ms" }
+      { label: "Water Savings", value: "35%+" },
+      { label: "Hackathon", value: "Krishimanthan" },
+      { label: "Microcontroller", value: "ESP32 & Arduino" },
     ],
     featured: true,
-    githubUrl: "https://github.com/niyasjahangeer/siraq-platform",
-    liveUrl: "https://siraq.com",
+    githubUrl: "https://github.com/Niyas-J",
   },
   {
-    id: "agentic-ai-orchestrator",
-    title: "Autonomous Multi-Agent AI Workflow Orchestrator",
-    shortDesc: "Hierarchical agentic swarm orchestrator leveraging Gemini 1.5/2.0 API, LangGraph, and local Qwen/Ollama models for automated problem solving.",
-    description: "An advanced multi-agent framework that decomposes complex software engineering and research queries into directed acyclic graphs (DAGs) executed by specialized subagents (Architect, Coder, Critic, Verifier). Integrates tool-calling, memory persistence, human-in-the-loop checkpoints, and hybrid cloud/local inference.",
-    category: "AI & Agents",
-    badge: "Cutting-Edge AI",
-    tags: ["LangGraph", "Gemini API", "Python", "FastAPI", "Ollama", "Qwen", "Vector DB (Chroma)"],
+    id: "siraq-studio",
+    title: "SIRAQ Studio & Commercial Print Solutions",
+    shortDesc: "Design, branding, and customized digital/physical documentation business serving institutional and commercial clients.",
+    description: "Founded and operated by Niyas Jahangeer. Delivered 100+ creative deliverables spanning digital branding, ID cards and certificates, posters, banners, invitations, resume/presentation design, and automated print pipelines.",
+    category: "Web & Automation",
+    badge: "Entrepreneurship & SaaS",
+    tags: ["Branding", "Canva", "SAP ERP", "Product Design", "Client Operations", "UI/UX"],
     features: [
-      "Dynamic agent team generation with stateful graph memory",
-      "Hybrid routing: High-speed local LLMs for trivial parsing + Gemini Pro for deep reasoning",
-      "Safe sandboxed code execution tool for automated verification",
-      "Real-time streaming agent thought process and tool execution graphs",
-      "RAG vector memory integration with semantic document indexing"
+      "Over 100+ creative deliverables shipped across corporate and student organizations",
+      "Full lifecycle ownership: client consultation, creative prototyping, high-res production",
+      "Automated design templates for ID card, certificate, and presentation generation",
+      "Comprehensive digital and physical print delivery fulfillment"
     ],
-    architecture: "Client Web UI -> FastAPI Streaming WebSocket -> LangGraph State Graph -> Gemini / Ollama Model Adapters -> Sandboxed Tool Runners -> Persistent Memory Store.",
+    architecture: "Client Requirement Intake -> Digital Vector Prototyping (Canva/Figma) -> Automated Template Engine -> Print & Digital Asset Delivery.",
     metrics: [
-      { label: "Task Success Rate", value: "94.2%" },
-      { label: "Cost Reduction vs Pure GPT-4", value: "72%" },
-      { label: "Streaming Latency", value: "110ms" }
+      { label: "Deliverables", value: "100+ Shipped" },
+      { label: "Role", value: "Founder & CEO" },
+      { label: "Operation", value: "Digital & Print" }
     ],
     featured: true,
-    githubUrl: "https://github.com/niyasjahangeer/agentic-ai-orchestrator",
-    liveUrl: "https://agentic-ai.vercel.app",
+    githubUrl: "https://github.com/Niyas-J",
   },
   {
-    id: "robovision-arm",
-    title: "RoboVision & Embedded ARM Controller",
-    shortDesc: "Real-time edge computer vision and robotic arm kinematics controller based on ARM Cortex and OpenCV.",
-    description: "A hardware-software robotics project featuring a 5-axis articulated robotic manipulator guided by an edge camera. The vision pipeline identifies, classifies, and tracks physical objects, while the inverse kinematics engine computes joint angles executed by an ARM microcontroller via PWM servo drives.",
-    category: "Embedded Systems",
-    badge: "Robotics & CV",
-    tags: ["ARM Cortex-M", "Embedded C", "Python", "OpenCV", "Inverse Kinematics", "UART", "Robotics"],
+    id: "customer-data-flask",
+    title: "Customer Data Collection Web App",
+    shortDesc: "Structured multi-step customer information collection platform with photo uploads and secure server-side processing.",
+    description: "Sole developer for this production Flask web application. Designed the user interface, relational data-flow logic, file upload pipeline for photo capture, and backend validation.",
+    category: "Web & Automation",
+    badge: "Production Web App",
+    tags: ["Python", "Flask", "SQLite", "HTML5", "CSS3", "JavaScript", "File Uploads"],
     features: [
-      "Sub-30ms object detection and color/shape segmentation at 60 FPS",
-      "Analytical inverse kinematics calculation for 5-DOF spatial coordinates",
-      "Hardware PID feedback loop maintaining 0.5mm positional repeatability",
-      "Safety emergency kill-switch and electronic overload thermal cutoff",
-      "Interactive desktop GUI telemetry controller built with Streamlit & WebSockets"
+      "Structured customer questionnaire with real-time client-side validation",
+      "Photo and identification document upload and server-side processing",
+      "SQLite / Relational database storage with search and export capabilities",
+      "Responsive layout optimized for mobile and low-bandwidth connectivity"
     ],
-    architecture: "Industrial Camera -> OpenCV Pipeline (Python) -> Inverse Kinematics Math Module -> UART Serial -> ARM Cortex-M Firmware -> Closed-loop PWM Actuators.",
+    architecture: "HTML5/CSS Responsive UI -> Flask Routing & Form Parser -> Local File Storage & SQLite DB -> Admin Review Panel.",
     metrics: [
-      { label: "Frame Rate", value: "60 FPS" },
-      { label: "Repeatability", value: "±0.5 mm" },
-      { label: "Inference Speed", value: "18ms" }
+      { label: "Stack", value: "Flask + Python" },
+      { label: "Role", value: "Sole Developer" },
+      { label: "Storage", value: "Relational + Media" }
     ],
     featured: false,
-    githubUrl: "https://github.com/niyasjahangeer/robovision-arm",
+    githubUrl: "https://github.com/Niyas-J",
   },
   {
-    id: "campus-portal",
-    title: "Smart Campus & Academic Resource Management Portal",
-    shortDesc: "Centralized institutional platform facilitating attendance tracking, digital lab resources, event notifications, and student engagement.",
-    description: "Engineered to replace fragmented college communications. Provides faculty and students with an intuitive hub for timetable scheduling, attendance analytics, assignment submissions, digital lab manuals, and automated SMS/email announcements.",
-    category: "Full-Stack SaaS",
-    badge: "EdTech Solution",
-    tags: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "JWT Auth"],
+    id: "pcb-robotics",
+    title: "Robotics & PCB Hardware Projects",
+    shortDesc: "Microcontroller-based embedded robotics, sensor integration, and PCB design showcased at national hackathons.",
+    description: "Hands-on hardware engineering incorporating Arduino, ESP32, motor drivers, sensor arrays, and PCB development. Participant at the PCB Cupid Hardware Hackathon 3.0 at Dayananda Sagar Academy of Technology and Management, Bengaluru.",
+    category: "IoT & Hardware",
+    badge: "Hardware & PCB Hackathon",
+    tags: ["Arduino", "ESP32", "PCB Design", "Sensors", "Actuators", "Embedded C", "Robotics"],
     features: [
-      "Automated attendance analytics with low-percentage early warning alerts",
-      "Interactive schedule viewer with push notifications for cancelled/rescheduled lectures",
-      "Digital laboratory repository with downloadable circuit schematics and code samples",
-      "Role-based administrative dashboards for Head of Department and faculty mentors",
-      "High-throughput exam seat allocator and hall-ticket generation system"
+      "Microcontroller firmware for autonomous sensor-guided obstacle navigation",
+      "PCB schematic development and layout design verified at PCB Cupid Hackathon 3.0",
+      "Conducted hands-on PCB workshop for 69 students as IRIS President",
+      "Multi-sensor integration (Ultrasonic, IR, Temperature, Relay actuators)"
     ],
-    architecture: "React Single Page App -> Node.js / Express REST API -> MongoDB Atlas -> Cloudinary File Storage -> SendGrid Notification Dispatcher.",
+    architecture: "Sensors & Inputs -> Microcontroller (Arduino/ESP32) -> Motor Drivers / Relays -> PCB Power Distribution.",
     metrics: [
-      { label: "Active Students", value: "1,200+" },
-      { label: "Daily Transactions", value: "8,500+" },
-      { label: "Staff Time Saved", value: "65%" }
+      { label: "Hackathon", value: "PCB Cupid 3.0" },
+      { label: "Students Trained", value: "69 Students" },
+      { label: "Hardware", value: "Arduino / ESP32" }
     ],
     featured: false,
-    githubUrl: "https://github.com/niyasjahangeer/smart-campus-portal",
+    githubUrl: "https://github.com/Niyas-J",
   }
 ];
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
-    name: "Electronics & Embedded Systems",
-    icon: "Cpu",
-    description: "Physical computing, circuit analysis, microcontrollers, and communication protocols.",
-    skills: [
-      { name: "Microcontrollers (ESP32, STM32, Arduino, ARM Cortex)", level: 94, category: "Hardware", experience: "3+ Years", highlight: true },
-      { name: "Embedded C / C++", level: 90, category: "Hardware", experience: "3+ Years", highlight: true },
-      { name: "Wireless Protocols (LoRaWAN, BLE, Zigbee, WiFi, MQTT)", level: 88, category: "Hardware", experience: "2+ Years", highlight: true },
-      { name: "Sensors & Actuators (Analog, I2C, SPI, UART, PWM)", level: 92, category: "Hardware", experience: "3+ Years" },
-      { name: "Circuit Design & PCB Schematic Simulation (KiCad/Proteus)", level: 82, category: "Hardware", experience: "2+ Years" },
-      { name: "Robotics Kinematics & Motor Drivers", level: 84, category: "Hardware", experience: "2+ Years" },
-    ]
-  },
-  {
-    name: "Artificial Intelligence & Agents",
+    name: "AI & Machine Learning",
     icon: "Bot",
-    description: "LLMs, multi-agent frameworks, prompt engineering, and hybrid local/cloud inference.",
+    description: "Model training, data-centric AI, LangGraph multi-agent swarms, and healthcare AI applications.",
     skills: [
-      { name: "Autonomous AI Agents (LangGraph, Swarms)", level: 92, category: "AI", experience: "2 Years", highlight: true },
-      { name: "Gemini API (1.5 Flash/Pro, Multi-modal, Function Calling)", level: 95, category: "AI", experience: "2 Years", highlight: true },
-      { name: "Local LLMs (Ollama, Qwen 2.5, DeepSeek, vLLM)", level: 88, category: "AI", experience: "1.5 Years" },
-      { name: "Retrieval-Augmented Generation (RAG) & Vector DBs", level: 86, category: "AI", experience: "1.5 Years" },
-      { name: "Computer Vision (OpenCV, Object Detection)", level: 80, category: "AI", experience: "2 Years" },
+      { name: "TensorFlow & AI Model Training", level: 92, category: "AI", experience: "2+ Years", highlight: true },
+      { name: "AI Application Development & Prototyping", level: 95, category: "AI", experience: "2+ Years", highlight: true },
+      { name: "Data-Centric AI (HackWise Rank 9: score 0.895)", level: 94, category: "AI", experience: "2 Years", highlight: true },
+      { name: "LangGraph & Autonomous Multi-Agent Swarms", level: 90, category: "AI", experience: "1.5 Years", highlight: true },
+      { name: "Ollama Local LLMs (Qwen, DeepSeek)", level: 88, category: "AI", experience: "1.5 Years" },
+      { name: "Computer Vision & Medical Scan Analysis", level: 86, category: "AI", experience: "2 Years" },
     ]
   },
   {
-    name: "Frontend Engineering",
+    name: "Hardware & Embedded Systems",
+    icon: "Cpu",
+    description: "Electronics and Communication engineering, microcontrollers, IoT, sensors, and PCB design.",
+    skills: [
+      { name: "Arduino & ESP32 Microcontrollers", level: 95, category: "Hardware", experience: "3+ Years", highlight: true },
+      { name: "IoT & Wireless Sensor Networks", level: 92, category: "Hardware", experience: "2+ Years", highlight: true },
+      { name: "Robotics, Sensors & Actuators", level: 88, category: "Hardware", experience: "2+ Years", highlight: true },
+      { name: "Embedded C / Firmware Development", level: 88, category: "Hardware", experience: "2+ Years" },
+      { name: "PCB Development & Hardware Prototyping", level: 82, category: "Hardware", experience: "PCB Cupid 3.0" },
+      { name: "Workshop Mentorship (Trained 69 Students)", level: 94, category: "Hardware", experience: "IRIS President" },
+    ]
+  },
+  {
+    name: "Programming & Software",
     icon: "Layout",
-    description: "Modern, responsive, animated web applications with exceptional user experiences.",
+    description: "Backend APIs, dynamic web apps, full-stack frameworks, and responsive design.",
     skills: [
-      { name: "React & Next.js 14+ (App Router, Server Actions)", level: 95, category: "Frontend", experience: "3+ Years", highlight: true },
-      { name: "TypeScript & Modern JavaScript (ESNext)", level: 94, category: "Frontend", experience: "3+ Years", highlight: true },
-      { name: "Tailwind CSS & Modern Design Systems", level: 98, category: "Frontend", experience: "3+ Years", highlight: true },
-      { name: "Framer Motion & Micro-Interactions", level: 90, category: "Frontend", experience: "2+ Years" },
-      { name: "Streamlit (Rapid Data & AI Prototyping)", level: 88, category: "Frontend", experience: "2 Years" },
-      { name: "HTML5 / Semantic Accessible CSS", level: 96, category: "Frontend", experience: "4+ Years" },
+      { name: "Python & Flask Web Framework", level: 94, category: "Software", experience: "3+ Years", highlight: true },
+      { name: "JavaScript & TypeScript", level: 90, category: "Software", experience: "2+ Years", highlight: true },
+      { name: "HTML5, CSS3 & Responsive UI Systems", level: 96, category: "Software", experience: "3+ Years", highlight: true },
+      { name: "Next.js & React (App Router)", level: 92, category: "Software", experience: "2+ Years", highlight: true },
+      { name: "Streamlit (AI & Data Dashboard Prototyping)", level: 90, category: "Software", experience: "2 Years" },
+      { name: "REST API Design & Architecture", level: 92, category: "Software", experience: "2+ Years" },
     ]
   },
   {
-    name: "Backend & Systems",
+    name: "Tools, Platforms & Databases",
     icon: "Server",
-    description: "High-performance APIs, real-time WebSockets, microservices, and databases.",
+    description: "Version control, hosting, databases, and visualization libraries.",
     skills: [
-      { name: "Python (FastAPI, Flask, AsyncIO)", level: 92, category: "Backend", experience: "3+ Years", highlight: true },
-      { name: "Node.js & Express / Nest", level: 88, category: "Backend", experience: "2+ Years" },
-      { name: "RESTful APIs & WebSocket Real-time Feeds", level: 92, category: "Backend", experience: "3+ Years" },
-      { name: "Supabase & PostgreSQL (Row-Level Security)", level: 90, category: "Backend", experience: "2 Years", highlight: true },
-      { name: "Firebase & Cloud Firestore", level: 92, category: "Backend", experience: "3 Years" },
-      { name: "MongoDB & SQLite", level: 86, category: "Backend", experience: "2+ Years" },
+      { name: "GitHub & Version Control (28+ Public Repos)", level: 96, category: "DevOps", experience: "3+ Years", highlight: true },
+      { name: "Vercel, Railway & Cloud Deployment", level: 92, category: "DevOps", experience: "2+ Years", highlight: true },
+      { name: "Firebase & Cloud Firestore", level: 90, category: "Database", experience: "2+ Years" },
+      { name: "MongoDB & SQLite", level: 88, category: "Database", experience: "2+ Years" },
+      { name: "Plotly Data Visualizations", level: 86, category: "Tools", experience: "1.5 Years" },
     ]
   },
   {
-    name: "DevOps & Cloud Infrastructure",
-    icon: "Cloud",
-    description: "Continuous integration, deployment platforms, Git version control, and containerization.",
+    name: "Business, Creative & Languages",
+    icon: "Sparkles",
+    description: "Enterprise systems, design suites, entrepreneurial execution, and polyglot communication.",
     skills: [
-      { name: "Vercel & Next.js Edge Deployment", level: 95, category: "DevOps", experience: "3 Years", highlight: true },
-      { name: "Git & GitHub Collaborative Workflows", level: 92, category: "DevOps", experience: "4 Years", highlight: true },
-      { name: "Railway & Cloud Container Hosting", level: 86, category: "DevOps", experience: "2 Years" },
-      { name: "Firebase Hosting & Cloud Functions", level: 88, category: "DevOps", experience: "2 Years" },
-      { name: "Google Antigravity & Advanced Agent Tooling", level: 94, category: "DevOps", experience: "1.5 Years" },
+      { name: "SAP ERP Fundamentals (SAP Certified)", level: 88, category: "Enterprise", experience: "Certified", highlight: true },
+      { name: "Microsoft Excel & Data Analysis (Certified)", level: 92, category: "Analytics", experience: "Certified", highlight: true },
+      { name: "Canva & Presentation Design (100+ Deliverables)", level: 96, category: "Creative", experience: "SIRAQ Studio", highlight: true },
+      { name: "Customer Service & Business Operations", level: 90, category: "Business", experience: "Founder & CEO" },
+      { name: "5 Languages (English, Malayalam, Hindi, Kannada, Tamil)", level: 95, category: "Languages", experience: "Fluent / Working", highlight: true },
     ]
   }
 ];
 
 export const TIMELINE: TimelineItem[] = [
   {
-    id: "ece-degree",
-    period: "2023 - Present",
-    role: "B.Tech in Electronics & Communication Engineering",
-    organization: "Engineering College / University",
-    location: "Kerala, India",
+    id: "iris-president",
+    period: "Oct 2026 – Present",
+    role: "President, IRIS Community",
+    organization: "KVG College of Engineering (KVGCE)",
+    location: "Sullia, Karnataka",
+    type: "Leadership",
+    description: "Promoted from Technical Coordinator (Mar 2026 – Oct 2026) to lead student community operations, technical teams, events, and workshops across IoT, Robotics, and Intelligent Software initiatives.",
+    achievements: [
+      "Organized hands-on PCB workshop activities involving 69 students",
+      "Coordinating project exhibitions, collaborative student engagement, and project-based learning",
+      "Manage technical development, digital platforms, branding, and community communications"
+    ],
+    tags: ["Leadership", "IoT", "Robotics", "PCB Workshop", "Community Building"]
+  },
+  {
+    id: "cognex-secretary",
+    period: "Oct 2026 – Present",
+    role: "Secretary General, COGNEX.AI",
+    organization: "KVG College of Engineering (KVGCE)",
+    location: "Sullia, Karnataka",
+    type: "Leadership",
+    description: "Promoted from Member (Nov 2025 – Jan 2026) → Joint Secretary (Jan 2026 – Oct 2026) → Secretary General of the premier AI club at KVGCE.",
+    achievements: [
+      "Coordinate club operations, strategic planning, technical hackathons, and team collaborations",
+      "Spearhead AI workshops, student communication, and poster/branding design"
+    ],
+    tags: ["AI Leadership", "COGNEX.AI", "Event Management", "Strategy"]
+  },
+  {
+    id: "siraq-ceo",
+    period: "Present",
+    role: "Founder & CEO",
+    organization: "SIRAQ / SIRAQ Studio",
+    location: "Bengaluru & Sullia, India",
+    type: "Entrepreneurship",
+    description: "Independently run a design and print services enterprise delivering digital branding, ID cards and certificates, posters, banners, invitations, resume/presentation design, printing, and documentation.",
+    achievements: [
+      "Successfully delivered 100+ creative and commercial deliverables",
+      "Own complete client communication, pricing, quality control, and on-time fulfillment"
+    ],
+    tags: ["Entrepreneurship", "Founder & CEO", "Branding", "Client Operations"]
+  },
+  {
+    id: "be-degree",
+    period: "Oct 2024 – 2028 (Expected)",
+    role: "B.E. in Electronics & Communication Engineering",
+    organization: "KVG College of Engineering (KVGCE)",
+    location: "Sullia, Karnataka",
     type: "Education",
-    description: "Rigorous academic study focusing on Signals & Systems, Microprocessors & Microcontrollers, VLSI, Wireless Communications, Digital Signal Processing, and Embedded Systems.",
+    description: "Currently in 5th Semester. Focused on Signals & Systems, Microprocessors & Microcontrollers, VLSI, Embedded Systems, and Wireless Sensor Telemetry.",
     achievements: [
-      "Top percentile academic performance with specialized research into IoT telemetry & sensor networks",
-      "Lead technical organizer for college robotics hackathons and IEEE tech symposia",
-      "Spearheaded the development of the campus academic management web portal"
+      "Active researcher and builder in IoT hardware, robotics, and embedded systems",
+      "Elected President of IRIS Community and Secretary General of COGNEX.AI"
     ],
-    tags: ["Embedded C", "Signals & Systems", "VLSI", "Microcontrollers", "Wireless Comms"]
-  },
-  {
-    id: "siraq-founder",
-    period: "2024 - Present",
-    role: "Founder & Lead Architect",
-    organization: "SIRAQ Technologies",
-    location: "Remote / India",
-    type: "Experience",
-    description: "Driving the design, technical architecture, and implementation of high-performance SaaS platforms, IoT dashboards, and custom AI agent solutions for businesses and institutions.",
-    achievements: [
-      "Engineered multi-tenant SaaS engines serving real-world users with 99.9% uptime",
-      "Architected custom hardware-to-cloud telemetry pipelines for agricultural and industrial clients",
-      "Integrated autonomous multi-agent pipelines accelerating internal developer productivity"
-    ],
-    tags: ["Next.js", "FastAPI", "Supabase", "System Architecture", "Product Strategy"]
-  },
-  {
-    id: "agrimithra-lead",
-    period: "2024",
-    role: "Lead Hardware & IoT Engineer",
-    organization: "AgriMithra Precision Agriculture Project",
-    location: "Kerala, India",
-    type: "Project",
-    description: "Designed, fabricated, and deployed an autonomous farm monitoring and irrigation control system featuring custom ESP32 LoRa wireless field nodes and cloud dashboard.",
-    achievements: [
-      "Achieved 38% reduction in agricultural water wastage in pilot deployments",
-      "Engineered battery-operated sensor nodes with 18-month field longevity",
-      "Presented project at regional engineering exhibitions and won top innovation commendation"
-    ],
-    tags: ["ESP32", "LoRaWAN", "Precision Agriculture", "FastAPI", "Next.js"]
-  },
-  {
-    id: "smart-hospital-lead",
-    period: "2024",
-    role: "Systems & Firmware Architect",
-    organization: "Smart Hospital Automation Initiative",
-    location: "Kerala, India",
-    type: "Project",
-    description: "Conceptualized and engineered a multi-node clinical automation system integrating vital telemetry, RFID equipment localization, and automated emergency triage.",
-    achievements: [
-      "Reduced critical emergency alert reaction time by 45% in simulated hospital trials",
-      "Authored comprehensive architectural whitepaper and engineering specification",
-      "Successfully integrated bidirectional WebSockets for instantaneous ICU station updates"
-    ],
-    tags: ["Embedded Systems", "FreeRTOS", "Healthcare IoT", "Real-time Telemetry"]
+    tags: ["ECE", "KVGCE", "Embedded C", "Signals", "Hardware"]
   }
 ];
 
-export const FAQS = [
+export const HACKATHONS: HackathonItem[] = [
   {
-    q: "What makes your engineering background unique?",
-    a: "Unlike typical software developers who only write high-level code, my Electronics and Communication Engineering background gives me deep insight into hardware, silicon, memory registers, signal processing, and low-latency protocols. I bridge the physical world (sensors, ESP32, ARM, LoRa) with the cloud (Next.js, FastAPI, Supabase) and autonomous AI systems."
+    name: "HackWise – 3LC Data-Centric AI Challenge",
+    organizer: "Sphere Hive",
+    rank: "Rank 9 (Score: 0.895)",
+    description: "Focused on AI model training, structured datasets, data curation, and real-time model evaluation.",
+    highlight: "National Rank 9 with 0.895 evaluation score in data-centric AI"
   },
   {
-    q: "Are you available for freelance projects or employment?",
-    a: "Yes! I am actively open to high-impact software engineering roles, full-stack development, IoT/embedded systems engineering, and innovative startup collaborations."
+    name: "Krishimanthan – 36-Hour National Hackathon",
+    organizer: "Malnad College of Engineering, Hassan",
+    description: "Time-constrained hardware-software problem solving, rapid prototyping, and presentation of smart agricultural solutions.",
+    highlight: "Developed IoT agricultural telemetry prototype under pressure"
   },
   {
-    q: "What is your primary tech stack for production applications?",
-    a: "For web and full-stack, I build with Next.js 14 (App Router), TypeScript, Tailwind CSS, and Python (FastAPI). For databases and backends, I leverage Supabase (PostgreSQL), Firebase, and MongoDB. For AI, I specialize in the Gemini API, LangGraph multi-agent swarms, and local Ollama models. For hardware, I write Embedded C/C++ on ESP32, STM32, and ARM."
-  },
-  {
-    q: "How do you approach AI agent development?",
-    a: "I design stateful, deterministic graph workflows using LangGraph and function-calling architectures. Rather than relying on fragile single-prompt chains, I construct hierarchical agent swarms with specialized roles, dynamic validation steps, and cost-effective hybrid routing between cloud (Gemini) and local LLMs (Ollama)."
+    name: "PCB Cupid Hardware Hackathon 3.0",
+    organizer: "Dayananda Sagar Academy of Technology and Management, Bengaluru",
+    description: "National-level hardware and printed circuit board (PCB) design and fabrication hackathon.",
+    highlight: "Engineered and validated custom circuit schematics and PCB layouts"
   }
 ];
-

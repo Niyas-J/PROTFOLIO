@@ -13,8 +13,8 @@ import {
   Github, 
   Linkedin, 
   Mail,
-  CheckCircle2,
-  Activity
+  Award,
+  Crown
 } from "lucide-react";
 
 interface HeroProps {
@@ -42,20 +42,20 @@ export const Hero: React.FC<HeroProps> = ({
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            <span>{PERSONAL_INFO.status}</span>
+            <span className="text-zinc-200">President, IRIS Community · Secretary General, COGNEX.AI</span>
           </div>
 
           {/* Primary Main Title */}
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.1]">
-            Engineering{" "}
-            <span className="gradient-text-indigo">Silicon</span>,{" "}
-            <span className="gradient-text-cyan">Cloud</span> &{" "}
-            <span className="gradient-text-emerald">Agentic AI</span>.
+            Shipping{" "}
+            <span className="gradient-text-indigo">AI Healthtech</span>,{" "}
+            <span className="gradient-text-cyan">IoT Hardware</span> &{" "}
+            <span className="gradient-text-emerald">Intelligent Software</span>.
           </h1>
 
           {/* Subheading & Core Value Proposition */}
           <p className="text-base sm:text-lg md:text-xl text-zinc-400 font-normal max-w-2xl mb-10 leading-relaxed">
-            I am <strong className="text-white font-semibold">Niyas Jahangeer</strong> — an Electronics & Communication Engineering student, full-stack engineer, and technology builder. I bridge physical microcontrollers and IoT telemetry with high-throughput cloud architectures and autonomous multi-agent intelligence.
+            I am <strong className="text-white font-semibold">Niyas Jahangeer</strong> — an Electronics & Communication Engineering undergraduate at KVGCE, AI & software developer, and founder of SIRAQ Studio. Building real-world healthtech platforms (MediScan-AI 6+ repo ecosystem), Flask applications, and hands-on robotics.
           </p>
 
           {/* Primary Action Buttons */}
@@ -68,7 +68,7 @@ export const Hero: React.FC<HeroProps> = ({
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold shadow-lg shadow-indigo-600/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
             >
               <Layers className="w-4 h-4" />
-              <span>Explore Architecture & Projects</span>
+              <span>Explore Projects (MediScan, AGENTX)</span>
               <ArrowUpRight className="w-4 h-4" />
             </a>
 
@@ -80,7 +80,7 @@ export const Hero: React.FC<HeroProps> = ({
               className="inline-flex items-center gap-2 px-5 py-3 rounded-xl glass-panel text-zinc-200 hover:text-white text-sm font-semibold transition-all hover:scale-[1.02] hover:border-cyan-500/40"
             >
               <Cpu className="w-4 h-4 text-cyan-400" />
-              <span>Interactive IoT Hardware Lab</span>
+              <span>IRIS AgriShield Hardware Lab</span>
             </a>
 
             {/* Talk to AI Button */}
@@ -96,22 +96,21 @@ export const Hero: React.FC<HeroProps> = ({
               <span>Ask Niyas AI</span>
             </button>
 
-            {/* Terminal Button */}
+            {/* Resume Button */}
             <button
               onClick={() => {
                 sound.playClick();
-                onOpenTerminal();
+                onOpenResume();
               }}
               onMouseEnter={() => sound.playHover()}
-              className="inline-flex items-center gap-2 px-4 py-3 rounded-xl glass-panel text-zinc-400 hover:text-white text-sm font-mono transition-all hover:scale-[1.02]"
-              title="Launch Dev Shell"
+              className="inline-flex items-center gap-2 px-4 py-3 rounded-xl glass-panel text-amber-300 hover:text-amber-200 text-sm font-medium transition-all hover:scale-[1.02] hover:border-amber-500/40"
             >
-              <Terminal className="w-4 h-4" />
-              <span className="text-xs">⌘K Shell</span>
+              <Award className="w-4 h-4 text-amber-400" />
+              <span>Official Resume</span>
             </button>
           </div>
 
-          {/* Social Proof & Direct Channels */}
+          {/* Social Channels */}
           <div className="flex items-center gap-4 text-zinc-400 mb-12">
             <a
               href={PERSONAL_INFO.socials.github}
@@ -119,7 +118,7 @@ export const Hero: React.FC<HeroProps> = ({
               rel="noopener noreferrer"
               onClick={() => sound.playClick()}
               className="p-2.5 rounded-full glass-panel hover:text-white hover:border-white/20 transition-all hover:scale-110"
-              aria-label="GitHub Profile"
+              aria-label="GitHub Profile (28+ Repos)"
             >
               <Github className="w-4 h-4" />
             </a>
@@ -143,7 +142,7 @@ export const Hero: React.FC<HeroProps> = ({
             </a>
           </div>
 
-          {/* Core Quantitative Engineering Metrics Cards */}
+          {/* Core Quantitative Resume Metrics */}
           <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
             {PERSONAL_INFO.stats.map((stat, i) => (
               <div
@@ -165,4 +164,3 @@ export const Hero: React.FC<HeroProps> = ({
     </section>
   );
 };
-

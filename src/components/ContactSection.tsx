@@ -21,7 +21,7 @@ export const ContactSection: React.FC = () => {
     name: "",
     email: "",
     subject: "",
-    category: "Full-Stack / AI Project",
+    category: "AI & Healthtech Project",
     message: "",
   });
 
@@ -30,11 +30,12 @@ export const ContactSection: React.FC = () => {
   const [errorMsg, setErrorMsg] = useState("");
 
   const categories = [
-    "Full-Stack / AI Project",
-    "IoT & Embedded Hardware",
-    "SaaS Platform Development",
-    "Job / Internship Opportunity",
-    "General Collaboration"
+    "AI & Healthtech Project (MediScan)",
+    "Enterprise AI / AGENTX Platform",
+    "IoT & Embedded Hardware (AgriShield)",
+    "SIRAQ Studio Design & Branding",
+    "Community / Student Leadership",
+    "Job / Internship Opportunity"
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -121,7 +122,7 @@ export const ContactSection: React.FC = () => {
 
               <div className="space-y-4">
                 <a
-                  href={`mailto:${PERSONAL_INFO.socials.email}`}
+                  href={`mailto:${PERSONAL_INFO.email}`}
                   onClick={() => sound.playClick()}
                   className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.06] border border-white/[0.06] text-zinc-200 transition-colors"
                 >
@@ -130,7 +131,21 @@ export const ContactSection: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-[10px] text-zinc-500 uppercase font-mono">Email Directly</div>
-                    <div className="text-xs font-semibold">{PERSONAL_INFO.socials.email}</div>
+                    <div className="text-xs font-semibold">{PERSONAL_INFO.email}</div>
+                  </div>
+                </a>
+
+                <a
+                  href={`tel:${PERSONAL_INFO.phone}`}
+                  onClick={() => sound.playClick()}
+                  className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.06] border border-white/[0.06] text-zinc-200 transition-colors"
+                >
+                  <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-400">
+                    <span className="text-xs font-mono font-bold">TEL</span>
+                  </div>
+                  <div>
+                    <div className="text-[10px] text-zinc-500 uppercase font-mono">Direct Phone</div>
+                    <div className="text-xs font-semibold">{PERSONAL_INFO.phone}</div>
                   </div>
                 </a>
 
@@ -146,7 +161,7 @@ export const ContactSection: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-[10px] text-zinc-500 uppercase font-mono">Professional Network</div>
-                    <div className="text-xs font-semibold">linkedin.com/in/niyasjahangeer</div>
+                    <div className="text-xs font-semibold">linkedin.com/in/niyas-j</div>
                   </div>
                 </a>
 
@@ -161,8 +176,8 @@ export const ContactSection: React.FC = () => {
                     <Github className="w-4 h-4" />
                   </div>
                   <div>
-                    <div className="text-[10px] text-zinc-500 uppercase font-mono">Open Source Repos</div>
-                    <div className="text-xs font-semibold">github.com/niyasjahangeer</div>
+                    <div className="text-[10px] text-zinc-500 uppercase font-mono">28+ Repositories</div>
+                    <div className="text-xs font-semibold">github.com/Niyas-J</div>
                   </div>
                 </a>
               </div>
